@@ -1,0 +1,115 @@
+:root {
+
+  /* 
+    Colours
+  */
+
+  --on-primary: #333B49;
+  --primary: #EBF0F9;
+  --on-secondary: #10141D;
+  --secondary: #FFFFFF;
+  --on-support-blue: #CAD6EC;
+  --grey-blue: #183362;
+  --grey-blue-02: #4E4F5B;
+  --atention-blue-02: #4E4F5B;
+  --grey: #999AA1;
+  --light-grey: #BABBBF;
+
+  --support-blue: #6D99FB;
+  --on-surface-02: #191E28;
+  --on-gray-blue: #808FA9;
+
+  /* 
+    Background
+  */
+
+  --background: #FCFCFC;
+  --surface-01: #F0F0EF;
+  --surface-02: #F7F5F2;
+  --overlay: #10141D;
+  --sky-blue: #9ED0E6;
+  --dark-blue: #051D41;
+
+  /* 
+    Feedback colors 
+  */
+
+  --success: #99C766;
+  --success-support: #2F3B28;
+  --alert: #E79E1B;
+  --alert-support: #9B671C;
+  --alert-support-02: #61461F;
+  --error: #CD2C19;
+  --error-support: #461527;
+  --error-02: #F6285F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("@/assets/fonts/OpenSans-Regular.ttf");
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6,
+span,
+p,
+a,
+em,
+label,
+input[type="text"] {
+  font-family: "Open Sans";
+}
+
+/*
+ * Page animations 
+ *
+ */
+
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+}
+
+.fadeOut {
+  animation: 0.5s fadeOut forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(-20px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 70% 0;
+  } to {
+    background-position: 80% 10%;
+  }
+}
+
