@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PlaceType {
+  id      String @id @default(uuid())
+  name    String @db.VarChar(60)
+  places  Place[]
+
+  @@map("place_types")
+}
+
+model Place {
+  id          String    @id @default(uuid())
+  name        String    @db.VarChar(100) 
+  nickname    String?   @db.VarChar(100)
+  cnpj        String    @db.VarChar(20)
+  city        String    @db.VarChar(80)
+  cep         String    @db.VarChar(20)
+  complement  String?   @db.VarChar(80)
+  state       String    @db.VarChar(5)
+  address     String    @db.VarChar(80)
+  email       String    @db.VarChar(100)
+  phone       String    @db.VarChar(20)
+  inputs      String    @db.VarChar(90)
+  turnstiles  String    @db.VarChar(90)
+  updated_at  DateTime  @updatedAt 
+
+  type        PlaceType @relation(fields: [type_id], references: [id])
+  type_id     String
+
+  events      Event[]
+  
+  @@map("places")
+}
+
+model EventType {
+  id      String  @id @default(uuid())
+  name    String  @db.VarChar(60) 
+  events  Event[]
+ 
+  @@map("event_types")
+}
+
+model Event {
+  id         String    @id @default(uuid())
+  name       String    @db.VarChar(100)
+  date       String    @db.VarChar(10)
+  time       String    @db.VarChar(10)
+  email      String    @db.VarChar(100)
+  phone      String    @db.VarChar(20)
+  updated_at DateTime  @updatedAt 
+
+  type       EventType @relation(fields: [type_id], references: [id])
+  type_id    String    @db.VarChar(100)
+  place      Place     @relation(fields: [place_id], references: [id])
+  place_id   String    @db.VarChar(100)
+  
+  @@map("events")
+}
