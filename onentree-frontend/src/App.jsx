@@ -16,6 +16,7 @@ import EditEvent from "@/components/Layout/EditEvent/EditEvent";
 import SuccessMessageCard from "@/components/Common/Card/SuccessMessageCard";
 import ErrorMessageCard from "@/components/Common/Card/ErrorMessageCard";
 import GlobalAlertContext from "@/context/GlobalAlertContext";
+import NotFound from "@/components/Pages/NotFound/NotFound";
 
 export default function App() {
 
@@ -65,6 +66,7 @@ export default function App() {
           <Route path="add" element={<AddPlace />} />
           <Route path="edit/:id" element={<EditPlace />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Slide direction="right" in={globalAlert.isSuccessActivated} mountOnEnter unmountOnExit>
