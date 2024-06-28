@@ -16,23 +16,32 @@ async function main() {
     { name: "Futebol" },
   ];
 
-  placeTypes.forEach(async (type) => {
-    await prisma.placeType.create({
-      data: {
-        id: randomUUID(),
-        name: type.name
-      }
-    });
-  });
+  const placesAlreadyExists = await prisma.placeType.findMany();
 
-  eventTypes.forEach(async (type) => {
-    await prisma.eventType.create({
-      data: {
-        id: randomUUID(),
-        name: type.name
-      }
+  if (!placesAlreadyExists.length) {
+    placeTypes.forEach(async (type) => {
+      await prisma.placeType.create({
+        data: {
+          id: randomUUID(),
+          name: type.name
+        }
+      });
     });
-  });
+  } 
+
+  const eventsAlreadyExists = await prisma.eventType.findMany();
+
+  if (!eventsAlreadyExists.length) {
+
+    eventTypes.forEach(async (type) => {
+      await prisma.eventType.create({
+        data: {
+          id: randomUUID(),
+          name: type.name
+        }
+      });
+    });
+  } 
 
 }
 
