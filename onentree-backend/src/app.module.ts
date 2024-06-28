@@ -11,7 +11,7 @@ import { NotFoundExceptionFilter } from './not-found-exception.filter';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: ['.env.development', '.env']
+      envFilePath: ['.env']
     }),
     PrismaModule,
     EventsModule, 
