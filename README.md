@@ -31,3 +31,8 @@ Você pode conferir todos os endpoints em ```http://localhost:3000/api``` onde o
 ### Deploy da aplicação
 
 [Onentreé](https://onentree-frontend.onrender.com/)
+
+### Modelagem do banco de dados
+
+<img title="a title" alt="Alt text" src="./modelagem/onentree-modelagem-dark.png">
+<img title="a title" alt="Alt text" src="./modelagem/onentree-modelagem-light.png">
