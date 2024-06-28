@@ -147,7 +147,7 @@ export default function EventsTable(props) {
         /> 
       ) : (
           <>
-            {!isInitialEventsLoading && !currentItemsLoading ? (
+            {(!isInitialEventsLoading && !currentItemsLoading) && initialEventsItems ? (
               <EventsDefaultTable 
                 currentItems={currentItems.length ? currentItems : initialEventsItems.data}
                 openEventOptions={openEventOptions}
