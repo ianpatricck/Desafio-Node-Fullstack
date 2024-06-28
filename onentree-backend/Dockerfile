@@ -7,6 +7,7 @@ COPY package.json package-lock.json /app/
 RUN npm install
 
 COPY . /app/
+COPY ./.env.development /app/.env
 
 RUN chmod +x /app/entrypoint.sh
 
