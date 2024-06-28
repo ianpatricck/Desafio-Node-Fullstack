@@ -162,7 +162,7 @@ export default function PlacesTable(props) {
         /> 
       ) : (
           <>
-            {!isInitialPlacesLoading && !currentItemsLoading ? (
+            {(!isInitialPlacesLoading && !currentItemsLoading) && initialPlacesItems ? (
               <PlacesDefaultTable 
                 currentItems={currentItems.length ? currentItems : initialPlacesItems.data}
                 openPlaceOptions={openPlaceOptions}
