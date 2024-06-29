@@ -5,14 +5,15 @@
 
 ### Iniciando back-end com o Docker
 
+_Lembre-se de conferir as variáveis de ambiente em .env_
+_Crie um arquivo .env e cole o conteúdo de .env.development dentro para que as migrações do banco de dados rodem_
+
 ```
 $ cd onentree-backend
 $ docker-compose up --build
 ```
 
 ### Iniciando front-end
-
-_Lembre-se de conferir as variáveis de ambiente em .env_
 
 ```
 $ cd onentree-frontend
