@@ -30,9 +30,6 @@ $ npm run dev
 Após esses passos seu app já está pronto para uso na porta padrão do Vite.
 Você pode conferir todos os endpoints em ```http://localhost:3000/api``` onde o Swagger está rodando.
 
-### Deploy da aplicação
-
-[Onentreé](https://onentree-frontend.onrender.com/)
 
 ### Modelagem do banco de dados
 
